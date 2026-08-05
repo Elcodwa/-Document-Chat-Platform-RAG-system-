@@ -1,0 +1,41 @@
+# Environment secrets - never commit these
+.env
+backend/.env
+frontend/.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+frontend/.next/
+
+# Storage (uploaded files, local runs)
+backend/storage/
+storage/
+
+# OS/editor
+.DS_Store
+.vscode/
+.idea/
+
+# Env variants and examples
+.env.*
+!.env.example
+
+# Misc
+*.sqlite3
+coverage/
+dist/
+build/
+pip-wheel-metadata/
+/.mypy_cache/
+*.log
+docker-compose.override.yml
+secrets/

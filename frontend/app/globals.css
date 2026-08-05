@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+/*
+  Design tokens for the platform. Palette and type pairing chosen
+  deliberately for a data/SQL tool: a confident, muted "query blue" as the
+  single accent (not a default Tailwind indigo/violet), status colors that
+  do real work (connection/query validation states), and a three-way type
+  pairing where the monospace face is functional - it's what SQL, table
+  names, and raw data actually render in, not a decorative flourish.
+*/
+:root {
+  --background: #f7f8fa;
+  --surface: #ffffff;
+  --surface-muted: #f0f2f5;
+  --border-color: #e3e6eb;
+  --border-strong: #cbd0d9;
+
+  --ink: #14161a;
+  --ink-muted: #5b6270;
+  --ink-faint: #9aa0ac;
+
+  --accent: #33508f;
+  --accent-hover: #28406f;
+  --accent-soft: #eaf0fb;
+
+  --success: #1f9d6c;
+  --success-soft: #e7f7ef;
+  --danger: #d64545;
+  --danger-soft: #fbeaea;
+  --warning: #b8760f;
+  --warning-soft: #fbf1df;
+
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-plex-mono);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border-color);
+  --color-border-strong: var(--border-strong);
+
+  --color-ink: var(--ink);
+  --color-ink-muted: var(--ink-muted);
+  --color-ink-faint: var(--ink-faint);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--color-border);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+/* Visible keyboard focus everywhere - no outline-none without a replacement. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Thin, quiet scrollbars that match the palette instead of the OS default. */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 999px;
+  border: 2px solid var(--background);
+}
