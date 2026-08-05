@@ -1,5 +1,9 @@
 # DataChat — Text-to-SQL & Document Chat Platform
 
+[![Backend CI](https://github.com/Elcodwa/-Document-Chat-Platform-RAG-system-/actions/workflows/backend-tests.yml/badge.svg)](https://github.com/Elcodwa/-Document-Chat-Platform-RAG-system-/actions)
+[![Frontend CI](https://github.com/Elcodwa/-Document-Chat-Platform-RAG-system-/actions/workflows/frontend-ci.yml/badge.svg)](https://github.com/Elcodwa/-Document-Chat-Platform-RAG-system-/actions)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
+
 Ask questions about your live databases and your documents, in plain
 English, in one chat interface. Type "How many orders came from Egypt
 last month?" and it writes, security-checks, and runs the SQL for you.
